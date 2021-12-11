@@ -1,0 +1,89 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:5000",
+    "basePath": "/api",
+    "schemaInfo": {
+        "login": {
+            "username": {
+                "type": "string"
+            },
+            "password": {
+                "type": "string",
+                "example": "password"
+            }
+        }
+    },
+    "paths": {
+        "/save": {
+            "post": {
+                "x-swagger-router-controller": "middleware-name1",
+                "operationId": "swagTest",
+                "tags": [
+                    "/save"
+                ],
+                "description": "Sample add Endpoint , Add New sample to the application",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "name and status for save",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/getAllSample": {
+            "post": {
+                "x-swagger-router-controller": "middleware-name1",
+                "operationId": "swagTest",
+                "tags": [
+                    "/getAllSample"
+                ],
+                "description": "Get Sample Endpoint, responses with ALL Sample",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Username and password for Login",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "properties": {
+                                
+                            }
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "securityDefinitions": {
+        "JWT": {
+            "description": "",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
